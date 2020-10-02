@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert, TouchableHighlight } from 'react-native';
-//import CoC2 from './components/CoC2';
 
 export default class App extends React.Component {
   showAlert = () => {
