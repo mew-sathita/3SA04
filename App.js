@@ -2,15 +2,28 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Weather from './components/Weather'
+import WeatherScreen from './components/WeatherScreen'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ZipCodeScreen from './components/ZipCodeScreen';
+
+const Stack = createStackNavigator();
+
 // create a component
 const App = () => {
   return (
     <View style={styles.container}>
-      <Weather zipCode="82000"/> 
       <Weather zipCode="92000"/> 
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={ZipCodeScreen} />
+        <Stack.Screen name="Weather" component={WeatherScreen} />
+      </Stack.Navigator> 
+    </NavigationContainer>      
+    </View> 
   );
 };
+
 // define your styles
 const styles = StyleSheet.create({
   container: {
@@ -19,4 +32,3 @@ const styles = StyleSheet.create({
 });
 //make this component available to the app
 export default App;
-//weather.js
