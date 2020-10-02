@@ -17,7 +17,7 @@ export default function Forecast(props) {
 }
 
 const styles = StyleSheet.create({
-    center: {        
+    center: {
         justifyContent: 'space-around',
         alignItems: 'center',
     },
